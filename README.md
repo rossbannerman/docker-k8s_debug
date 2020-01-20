@@ -5,4 +5,4 @@
 
 
 ## Usage
-`docker run --name drone-ansible --rm -it rossbannerman/k8s_debug /bin/sh`
+`docker run --name k8s_debug --rm -it rossbannerman/k8s_debug /bin/sh`
