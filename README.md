@@ -6,3 +6,4 @@
 
 ## Usage
 `docker run --name k8s-debug --rm -it rossbannerman/k8s-debug /bin/sh`
+`kubectl run --rm -i --tty debug --image=rossbannerman/k8s-debug -- /bin/sh`
