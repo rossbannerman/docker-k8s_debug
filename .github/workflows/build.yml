@@ -21,7 +21,6 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build and push
-        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./
@@ -29,10 +28,8 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/k8s-debug:latest
 
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+      - name: Touch file
+        run: touch empty
 
-      - name: Trigger empty commit
+      - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_options: '--allow-empty'
